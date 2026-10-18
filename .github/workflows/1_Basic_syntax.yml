@@ -1,4 +1,4 @@
-name: "Sample Job"
+name: "1.Sample Job"
 
 on:
  push:
