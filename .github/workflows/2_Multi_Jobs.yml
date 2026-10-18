@@ -1,4 +1,4 @@
-name: "Jobs_Dependency"
+name: "Multi_Jobs"
 
 on:
   push:
