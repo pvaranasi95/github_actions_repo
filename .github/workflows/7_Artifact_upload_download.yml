@@ -20,7 +20,7 @@ jobs:
      needs: file_creation
      steps:
        - name: Artifacts_Upload
-         uses: actions/upload-artifact@v7
+         uses: actions/upload-artifact@v4
          with:
            name: test-artifact
            path: reports/file.txt
@@ -29,7 +29,7 @@ jobs:
       needs: artifacts_upload
       steps:
         - name: Artifacts_Download
-          uses: actions/download-artifact@v7
+          uses: actions/download-artifact@v4
           with:
             name: test-artifact
             path: reports/
