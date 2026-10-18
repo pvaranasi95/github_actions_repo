@@ -1,4 +1,4 @@
-name: "7.Artifact Upload & Download"
+name: "8.Artifact Upload & Download"
 
 on:
   push:
