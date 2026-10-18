@@ -1,4 +1,4 @@
-name: "Run_Job_If_Any_Job_Failed"
+name: "6.Run_Job_If_Any_Job_Failed"
 
 on:
   push:
