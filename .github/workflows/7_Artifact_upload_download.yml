@@ -28,7 +28,7 @@ jobs:
       needs: artifacts_upload
       steps:
         - name: Artifacts_Download
-          uses: actions/download_artifact@v7
+          uses: actions/download-artifact@v7
           with:
             path: reports/
             
