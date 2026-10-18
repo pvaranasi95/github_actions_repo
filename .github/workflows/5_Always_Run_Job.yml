@@ -1,0 +1,23 @@
+name: "Always Run"
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+  disk_usage:
+     runs-on: ubuntu-latest
+     steps:
+        - name: Disk Usage
+          run: df -h
+  date_time:
+      runs-on: ubuntu-latest
+      if: always()
+      steps:
+        - name: Date&Time
+          run: date
