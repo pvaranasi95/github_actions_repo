@@ -15,10 +15,6 @@ jobs:
      steps:
        - name: Create file
          run: mkdir reports && date > reports/file.txt
-  artifacts_upload:
-     runs-on: ubuntu-latest
-     needs: file_creation
-     steps:
        - name: Artifacts_Upload
          uses: actions/upload-artifact@v4
          with:
@@ -26,7 +22,7 @@ jobs:
            path: reports/
   artifacts_download:
       runs-on: ubuntu-latest
-      needs: artifacts_upload
+      needs: file_creation
       steps:
         - name: Artifacts_Download
           uses: actions/download-artifact@v4
