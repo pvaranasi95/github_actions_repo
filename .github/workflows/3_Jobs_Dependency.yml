@@ -1,0 +1,25 @@
+name: "Jobs_Dependency"
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+ checkout:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v4
+ dateandtime:
+      runs-on: ubuntu-latest
+      needs: checkout
+      steps:
+        - name: Date&Time
+          run: date
+ disk_usage:
+    runs-on: ubuntu-latest
+    needs: dateandtime
+    steps:
+      - name: Disk_Usage
+        run: df -h
+  
