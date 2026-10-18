@@ -1,0 +1,35 @@
+name: "7.Artifact Upload & Download"
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+  file_creation:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Create file
+         run: mkdir reports && date > reports/file.txt
+  artifacts_upload:
+     runs-on: ubuntu-latest
+     needs: file_creation
+     steps:
+       - name: Artifacts_Upload
+         uses: actions/upload-artifact@v7
+         with:
+           path: reports/file.txt
+  artifacts_download:
+      runs-on: ubuntu-latest
+      needs: artifacts_upload
+      steps:
+        - name: Artifacts_Download
+          uses: actions/download_artifact@v7
+          with:
+            path: reports/
+            
+  
