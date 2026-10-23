@@ -1,0 +1,36 @@
+name: "9.Manual_Triggers_with_Inputs"
+
+on:
+  workflow_dispatch:
+    inputs:
+        option:
+           description: 'Select your Input'
+           required: true
+           type: 'choice'
+           default: 'disk_check'
+           options:
+             - disk_check
+             - memory_check
+             - process_check
+                  
+
+jobs:
+  Disk_Check:
+    runs-on: ubuntu-latest
+    if: inputs == 'disk_check'
+    steps:
+      - name: Disck_Usage
+        run: df -h
+  Memory_Check:
+     runs-on: ubuntu-latest
+     if: inputs == 'memory_check'
+     steps:
+       - name: Memory_Check
+         run: free -h
+  Process_Check:
+     runs-on: ubuntu-latest
+     if: inputs == 'process_check'
+     steps:
+       - name: Process_Check
+         run: ps -aux
+  
