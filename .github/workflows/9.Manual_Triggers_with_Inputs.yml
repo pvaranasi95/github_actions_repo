@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check_Input
-        run: echo "Selcted input is ${{inputs.option}}
+        run: echo "Selcted input is ${{inputs.option}}"
   Disk_Check:
     runs-on: ubuntu-latest
     if: ${{ inputs.option == 'disk_check' }}
