@@ -17,19 +17,19 @@ on:
 jobs:
   Disk_Check:
     runs-on: ubuntu-latest
-    if: inputs == 'disk_check'
+    if: ${{ inputs.option == 'disk_check' }}
     steps:
       - name: Disck_Usage
         run: df -h
   Memory_Check:
      runs-on: ubuntu-latest
-     if: inputs == 'memory_check'
+     if: ${{ inputs.option == 'memory_check' }}
      steps:
        - name: Memory_Check
          run: free -h
   Process_Check:
      runs-on: ubuntu-latest
-     if: inputs == 'process_check'
+     if: ${{ inputs.option == 'process_check' }}
      steps:
        - name: Process_Check
          run: ps -aux
