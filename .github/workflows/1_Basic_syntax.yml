@@ -1,5 +1,6 @@
 name: "1.Sample Job"
 
+#using Manual workflow trigger
 on:
  workflow_dispatch: 
 jobs:
