@@ -20,4 +20,4 @@ jobs:
         needs: Generate_Report
         steps:
           - name: Display_Report
-            run: echo "REPORT STATUS : ${{ needs.Generate_Report.outputs.report_status }}"
+            run:  echo "REPORT STATUS :" ${{ needs.Generate_Report.outputs.report_status }}
