@@ -1,8 +1,7 @@
 name: "6.Run_Job_If_Any_Job_Failed"
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   checkout:

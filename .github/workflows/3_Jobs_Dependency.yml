@@ -1,8 +1,7 @@
 name: "3.Jobs_Dependency"
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
  checkout:
