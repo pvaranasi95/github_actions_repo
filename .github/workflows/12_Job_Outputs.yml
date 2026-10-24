@@ -1,4 +1,4 @@
-name: "12.Job_Outputs.yml"
+name: "12.Job_Outputs"
 on:
   workflow_dispatch:
 
