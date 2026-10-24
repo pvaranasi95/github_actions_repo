@@ -13,7 +13,7 @@ jobs:
                 df -h
                 if [ $? -eq 0 ]; then
                 echo "check_status=PASSED" >> "$GITHUB_OUTPUT"
-                else:
+                else
                 echo "check_status=NOT_PASSED" >> "$GITHUB_OUTPUT"
                 fi
        outputs:
