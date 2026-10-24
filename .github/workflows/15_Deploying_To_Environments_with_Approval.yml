@@ -1,4 +1,4 @@
-name: "15_Deploying_To_Environments"
+name: "15.Deploying_To_Environments_With_Approval"
 
 on:
   workflow_dispatch:
