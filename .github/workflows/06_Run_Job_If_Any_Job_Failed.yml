@@ -1,4 +1,4 @@
-name: "6.Run_Job_If_Any_Job_Failed"
+name: "06.Run_Job_If_Any_Job_Failed"
 
 on:
   workflow_dispatch:

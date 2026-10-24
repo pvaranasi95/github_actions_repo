@@ -1,5 +1,5 @@
 
-name: "2.Multi Jobs"
+name: "02.Multi Jobs"
 
 on:
   workflow_dispatch:

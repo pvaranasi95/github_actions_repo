@@ -1,4 +1,4 @@
-name: "9.Manual_Triggers_with_Inputs"
+name: "09.Manual_Triggers_with_Inputs"
 
 on:
   workflow_dispatch:

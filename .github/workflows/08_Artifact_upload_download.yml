@@ -1,4 +1,4 @@
-name: "8.Artifact Upload & Download"
+name: "08.Artifact Upload & Download"
 
 on:
   workflow_dispatch:
