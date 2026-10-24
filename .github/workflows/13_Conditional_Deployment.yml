@@ -23,14 +23,9 @@ jobs:
         runs-on: ubuntu-latest
         needs: Pre_Deployment_Check
         steps:
-        - name: Deploy
+        - name: Deploy_Success
           if: needs.Pre_Deployment_Check.outputs.check_status == 'PASSED' 
           run: echo "Deployment Started"
-    Deployment_Skipped:
-        runs-on: ubuntu-latest
-        needs: Pre_Deployment_Check
-        if: success()
-        steps:
-          - name: Deployment_Skipped
-            if: needs.Pre_Deployment_Check.outputs.check_status == 'NOT_PASSED'
-            run: echo "Deployment Skipped"
+        - name: Deployment_Skipped
+          if: needs.Pre_Deployment_Check.outputs.check_status == 'NOT_PASSED'
+          run: echo "Deployment Skipped"
