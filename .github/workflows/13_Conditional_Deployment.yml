@@ -1,0 +1,31 @@
+name: "13.Conditional_Deployment"
+on:
+   workflow_dispatch:
+
+jobs:
+   Server_Check:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Server_Check
+           id: server
+           run: |
+               df -h
+               echo "server_status=PASSED" >> "$GITHUB_OUTPUT"
+      outputs:
+            server_status: ${{ steps.server.outputs.server_status }}
+   Deploy:
+       runs-on: ubuntu-latest
+       needs: Server_Check
+       if: needs.Server_Check.outputs.server_status == 'PASSED'
+       steps:
+          - name: Deploy
+            run: echo "Deployment Completed!"
+
+   Notify_Failure:
+        runs-on: ubuntu-latest
+        needs: [ "Server_Check", "Deploy" ]
+        if: failure()
+        steps:
+           - name: Notify_Failure
+             run: echo "Pipeline Failed"
+       
