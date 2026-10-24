@@ -1,0 +1,23 @@
+name: "12.Job_Outputs.yml"
+on:
+  workflow_dispatch:
+
+jobs:
+   Generate_Report:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Generate_Report
+          id: report
+          run: |
+            df -h
+            echo "report_status=PASSED" >> "$GITHUB_OUTPUT"
+      outputs:
+          report_status: ${{ steps.report.outputs.report_status }}
+          
+          
+   Display_Report:
+        runs-on: ubuntu-latest
+        needs: Generate_Report
+        steps:
+          - name: Display_Report
+            run: echo "REPORT STATUS : ${{ needs.Generate_Report.outputs.report_status }}"
